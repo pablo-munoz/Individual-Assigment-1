@@ -16,7 +16,7 @@ st.subheader(question)
 conn = st.connection("gsheets", type=GSheetsConnection)
 # Specify the spreadsheet when calling read()
 flights_df = conn.read()
-
+st.write(st.secrets)
 
 # Prepare data: aggregate total passengers per year
 yearly_passengers = flights_df.groupby('year')['passengers'].sum().reset_index()
